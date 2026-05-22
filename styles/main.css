@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--background: #030f1f;
+	--color: #8b99b9;
+	--color-border: #101d2e;
+	--gap: 30px;
+	--font-family: Rosario, sans-serif;
+}
+
+@font-face {
+	font-family: Rosario;
+	src: url(../fonts/Rosario-Medium.woff2);
+}
+
+body {
+	font-family: var(--font-family);
+	font-size: 14px;
+	background: var(--background);
+	color: var(--color);
+	overflow-x: hidden;
+	line-height: 140%;
+	padding-block-end: 100vh;
+	margin-block-start: -8vh;
+}
+
+header {
+	position: relative;
+	min-block-size: 100vh;
+	z-index: -1;
+	filter: blur(var(--scroll-blur));
+	opacity: var(--scroll-opacity);
+}
+
+header::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: url('../images/overlay.svg');
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+	backdrop-filter: saturate(1.04) hue-rotate(-4deg);
+}
+
+canvas {
+	display: block;
+	position: absolute;
+	inset-block-start: -1px;
+}
+
+#preloader {
+	position: fixed;
+	inset: 0;
+	background: var(--background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color);
+	font-size: 24px;
+	z-index: 1000;
+}
+
+.container {
+	max-inline-size: 900px;
+	margin: -30vh auto auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid var(--color-border);
+	border-top: none;
+	margin-block-end: 60px;
+	padding-block-end: 42px;
+}
+
+.logo {
+	margin-block-start: -60px;
+}
+
+.description {
+	max-inline-size: 420px;
+	margin: 40px 0 60px;
+}
+
+.brands {
+	display: flex;
+	gap: var(--gap);
+	align-items: center;
+}
+
+.brands img {
+	max-inline-size: 78.88px;
+}
+
+.info {
+	max-inline-size: 520px;
+	text-align: center;
+	margin: auto;
+	opacity: 0.32;
+}
+
+.info p {
+	margin-block-end: 20px;
+}
